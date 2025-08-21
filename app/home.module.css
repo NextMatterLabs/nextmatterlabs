@@ -22,21 +22,24 @@
 }
 
 .massiveTitle {
+    --spacing: 50px;
     font-weight: 100;
     font-size: 15em;
-    letter-spacing: 50px;
+    letter-spacing: var(--spacing);
     color: white;
     /* border: 1px solid red; */
-    margin-right: -50px;
+    margin-right: calc(-1 * var(--spacing));
 }
 
 .subheading {
+    --spacing: 20px;
+    /* --margin-top: calc(-1 * (var(--spacing) * 2 + 10px)); */
     color: white;
     text-transform: uppercase;
     text-align: center;
-    letter-spacing: 20px;
+    letter-spacing: var(--spacing);
     /* border: 1px solid red; */
-    margin-right: -30px;
+    margin-right: calc(-1 * (var(--spacing) * 1.5));
     margin-top: -50px;
     font-size: 10px;
 }
@@ -50,5 +53,46 @@
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .massiveTitle {
+        font-size: 15vmax;
+        letter-spacing: 30px;
+        margin-right: -30px;
+    }
+
+    .subheading {
+        letter-spacing: 10px;
+        margin-right: -10px;
+        margin-top: -30px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .massiveTitle {
+        --spacing: 30px;
+        font-size: 15vmax;
+    }
+
+    .subheading {
+        --spacing: 10px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .massiveTitle {
+        --spacing: 15px;
+        font-size: 9vmax;
+    }
+
+    .subheading {
+        --spacing: 10px;
+        margin-top: unset;
+        letter-spacing: 5px;
+        font-size: 7px;
     }
 }
